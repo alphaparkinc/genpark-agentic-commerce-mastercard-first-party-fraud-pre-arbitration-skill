@@ -1,0 +1,80 @@
+{
+  "name": "genpark-agentic-commerce-mastercard-first-party-fraud-pre-arbitration-skill",
+  "version": "1.0.0",
+  "title": "Mastercard First-Party Fraud & Pre-Arbitration Rebuttal Skill",
+  "description": "Mastercard Collaboration rule & Dispute Condition 4837/4853 pre-arbitration docket compilation, biometric token match, and cardholder friendly fraud liability shifting. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "mastercard-dispute",
+    "friendly-fraud",
+    "pre-arbitration",
+    "chargeback-defense",
+    "first-party-fraud",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "compile_mastercard_pre_arbitration_case",
+      "description": "Assemble a Mastercard pre-arbitration evidence dossier under Collaboration Dispute Condition 4837/4853 to refute friendly fraud.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dispute_reference_number": {
+            "type": "string"
+          },
+          "claim_amount_usd": {
+            "type": "number"
+          },
+          "cardholder_ip_country_match": {
+            "type": "boolean"
+          },
+          "has_biometric_fido_authentication": {
+            "type": "boolean"
+          },
+          "prior_same_device_tx_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "digital_goods_download_timestamp": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dispute_reference_number",
+          "claim_amount_usd",
+          "cardholder_ip_country_match",
+          "has_biometric_fido_authentication"
+        ]
+      }
+    },
+    {
+      "name": "evaluate_arbitration_financial_risk",
+      "description": "Assess risk vs reward of filing formal arbitration before Mastercard Arbitration Committee ($500 filing fee penalty risk).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "disputed_amount_usd": {
+            "type": "number"
+          },
+          "evidence_strength_score_pct": {
+            "type": "number"
+          },
+          "filing_fee_usd": {
+            "type": "number",
+            "description": "Standard Mastercard fee is $500"
+          }
+        },
+        "required": [
+          "disputed_amount_usd",
+          "evidence_strength_score_pct"
+        ]
+      }
+    }
+  ]
+}
